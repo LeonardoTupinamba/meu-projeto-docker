@@ -67,6 +67,19 @@ Print 7 — docker compose ps
 
 ## 6. Integração Contínua (Ações do GitHub)
 
+Arquivo do fluxo de trabalho: .github/workflows/ci.yml Gatilhos: push e pull_request O que o pipeline faz:
+
+valida o compose
+construir uma imagem
+sobe uma pilha
+aguarda a app responder e testa criar uma tarefa via API
+baixo uma pilha
+
+Print 8 - CI
+
+<img width="1262" height="1315" alt="ci-verde" src="https://github.com/user-attachments/assets/f83cf7b9-7ff4-43c4-9a9a-7130c57465da" />
+
+## 7. Quebra proposital do CI
 
 
 
