@@ -47,6 +47,29 @@ Evidência extra - volume criado
 
 Diferença entre docker compose down e docker compose down -v : Docker compose down para e remove os containers e as redes criadas pelo Compose e o Docker compose down -v faz tudo que o comando anterior faz, mas também remove os volumes.
 
+Imprimir 5 — inspecionar a rede docker
+
+<img width="1066" height="1010" alt="print rede" src="https://github.com/user-attachments/assets/7eb97c34-5402-4c84-b285-e1bf5aaac0b4" />
+
+Print 6 — dados dentro do MySQL (selecione * em todo_items;)
+
+<img width="1127" height="972" alt="print-tarefas-cadastradas" src="https://github.com/user-attachments/assets/cece53e6-14e4-42fe-b1b1-a550e65ecbc8" />
+
+## 5. Docker Compose
+
+Serviços: app, db Rede: todo-net · Volume: todo-mysql-data Healthcheck em: db · depende_on com: condição: service_healthy Variáveis ​​sensíveis: comunicações via .env (não versionado). Modelo em .env.example.
+
+Testei a persistência com o Compose também: cadastrei tarefas, rodei docker compose down (sem -v) e subi de novo — as tarefas acompanhadas lá. Depois rodei docker compose down -ve subi de novo — a lista voltou vazia, confirmando que o -v desligou o volume junto.
+
+Print 7 — docker compose ps
+
+<img width="1497" height="992" alt="docker compose" src="https://github.com/user-attachments/assets/fc2bc015-e276-4c8d-b018-b94889c9cb0a" />
+
+## 6. Integração Contínua (Ações do GitHub)
+
+
+
+
 ## Mapa do repositório
 
 | Arquivo                        | Pra que serve            | Aula |
