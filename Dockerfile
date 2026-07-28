@@ -10,6 +10,9 @@ RUN npm install
 
 COPY . .
 
+# alteração proposital
+
+
 # Segunda etapa - Imagem Final 
 FROM node:20-alpine 
 
