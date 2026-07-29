@@ -81,15 +81,39 @@ Print 8 - CI
 
 ## 7. Quebra proposital do CI
 
+O que eu quebrei: troquei a rota testada no smoke test de /items para /itemsss (uma rota que não existe) na etapa "Aguardar a aplicação respondente" do workflow.
+
+Erro que apareceu no log: A aplicação não subiu a tempo — depois de 30 tentativas de curl na rota /itemsss, sem sucesso.
+
+Como o CI reagiu: o passo "Aguardar a aplicação responder" falhou depois de esgotar as 30 tentativas (com sleep de 3s entre elas), porque o curl -sf nunca conseguiu bater na rota certa.
+
+Como eu corrigi: voltei a rota para /items no arquivo .github/workflows/ci.yml, commitei e dei push na mesma branch — o Actions rodou de novo automaticamente no PR e ficou verde.
+
+Print 9 - ci agindo -execução vermelha
+
+<img width="937" height="570" alt="ci-atuando" src="https://github.com/user-attachments/assets/a9f6f621-0f74-4285-9b76-7d03c257101e" />
+
+## 8. Dificuldades e aprendizados
+
+Dificuldades
+
+Conflitos de branches no Git: no início, o push para o main falhava porque havia divergência entre o branch local e o remoto. Isso exigiu entender melhor o fluxo de git pull --rebase, merge e push. Estrutura do GitHub Actions: o workflow não rodava porque os arquivos estavam na pasta errada (worflows em vez de workflows). Esse detalhe simples travou o CI até ser corrigido. Arquivo .env.example ausente: o pipeline quebrava logo no início porque o passo de copiar .env.example não encontrava o arquivo. Foi necessário criar esse arquivo com variáveis genéricas para que o CI pudesse rodar sem expor credenciais. Portas inconsistentes nos testes: o smoke test usava duas portas diferentes (5000 e 3000), o que causava falhas. Ajustar para a porta correta foi essencial.
+
+Aprendizados
+
+Organização de branches: ficou claro que trabalhar em branches separados e depois integrar ao main evita conflitos e mantém o histórico limpo. Padronização de workflows: pequenos detalhes como nomes de pastas e arquivos são cruciais para o GitHub Actions reconhecer e rodar os pipelines. Importância do .env.example: esse arquivo é fundamental para CI/CD, pois permite rodar a aplicação com variáveis de ambiente seguras e previsíveis. Depuração prática: usar logs, listar containers e aumentar tempo de espera são estratégias que ajudam a entender por que a aplicação não sobe. Cultura de testes automatizados: o smoke test mostrou como validar rapidamente se a aplicação está funcionando, evitando que erros passem despercebidos.
+
+## 9. Checklist de autoavaliação
+
+[x] Dockerfile em execução em vários estágios
+(x) .dockerignore presente
+Container não roda como raiz
+Volume nomeado + persistência demonstrada
+Rede nomeada + banco não exposto ao host
+compose.yaml é tudo com um comando
+.env no .gitignore e .env.example versionado
+CI verde
+PR com CI vermelho documentado
+Todos os 9 prints no README
 
 
-## Mapa do repositório
-
-| Arquivo                        | Pra que serve            | Aula |
-| ------------------------------ | ------------------------ | ---- |
-| `src/habits.js`                | Lógica pura (testável)   | 4    |
-| `test/habits.test.js`          | Testes que o CI roda     | 4    |
-| `Dockerfile` / `nginx.conf`    | Conteinerização          | 4    |
-| `.github/workflows/ci.yml`     | Integração Contínua      | 4    |
-| `.github/workflows/deploy.yml` | Entrega Contínua (Pages) | 5    |
-| `src/App.jsx` / `App.css`      | A interface da app       | —    |
