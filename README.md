@@ -93,9 +93,13 @@ Print 9 - ci-cd agindo - execução vermelha
 
 <img width="937" height="570" alt="ci-atuando" src="https://github.com/user-attachments/assets/a9f6f621-0f74-4285-9b76-7d03c257101e" />
 
-Print 10 - ci-cd executando e funcionando (sucesso)
+Print 10, 11 e 12 - ci-cd executando e funcionando (sucesso)
+
+<img width="931" height="855" alt="ci-cd trabalhando" src="https://github.com/user-attachments/assets/e1ea5640-5664-43d1-819a-6ddb02897adc" />
 
 <img width="932" height="1027" alt="CI-CD-funcionando" src="https://github.com/user-attachments/assets/f8449a61-a496-4403-a61e-e03f06678b83" />
+
+<img width="941" height="666" alt="ci-cd-finalizado" src="https://github.com/user-attachments/assets/645309a7-6604-404f-8d96-c42e5ee64ff8" />
 
 
 ## 8. Dificuldades e aprendizados
