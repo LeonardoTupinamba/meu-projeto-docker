@@ -105,15 +105,14 @@ Organização de branches: ficou claro que trabalhar em branches separados e dep
 
 ## 9. Checklist de autoavaliação
 
-[x] Dockerfile em execução em vários estágios
-(x) .dockerignore presente
-Container não roda como raiz
-Volume nomeado + persistência demonstrada
-Rede nomeada + banco não exposto ao host
-compose.yaml é tudo com um comando
-.env no .gitignore e .env.example versionado
-CI verde
-PR com CI vermelho documentado
-Todos os 9 prints no README
-
+- [x] Dockerfile em execução em vários estágios  
+- [x] .dockerignore presente  
+- [x] Container não roda como raiz  
+- [x] Volume nomeado + persistência demonstrada  
+- [x] Rede nomeada + banco não exposto ao host  
+- [x] compose.yaml é tudo com um comando  
+- [x] .env no .gitignore e .env.example versionado  
+- [x] CI verde  
+- [x] PR com CI vermelho documentado  
+- [x] Todos os 9 prints no README  
 
