@@ -89,9 +89,14 @@ Como o CI reagiu: o passo "Aguardar a aplicação responder" falhou depois de es
 
 Como eu corrigi: voltei a rota para /items no arquivo .github/workflows/ci.yml, commitei e dei push na mesma branch — o Actions rodou de novo automaticamente no PR e ficou verde.
 
-Print 9 - ci agindo -execução vermelha
+Print 9 - ci-cd agindo - execução vermelha
 
 <img width="937" height="570" alt="ci-atuando" src="https://github.com/user-attachments/assets/a9f6f621-0f74-4285-9b76-7d03c257101e" />
+
+Print 10 - ci-cd executando e funcionando (sucesso)
+
+<img width="932" height="1027" alt="CI-CD-funcionando" src="https://github.com/user-attachments/assets/f8449a61-a496-4403-a61e-e03f06678b83" />
+
 
 ## 8. Dificuldades e aprendizados
 
